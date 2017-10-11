@@ -1,29 +1,19 @@
-!<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Carosuel and Rich Snippets</title>
 </head>
 <body>
-    <script src="https://widget.reviews.co.uk/carousel/dist.js"></script>
-    <div id="carousel-widget" style="width:100%;max-width:360px;margin:0 auto;"></div>
-    <script>
-        carouselWidget('carousel-widget', {
-          store: 'lifeline-24',
-          primaryClr: '#f47e27',
-          neutralClr: '#f4f4f4',
-          reviewTextClr: '#494949',
-          layout:'fullWidth',
-          numReviews: 21
-        });
-    </script>
     <script type="application/ld+json" id="rich-snippets">
     </script>
+    <code id="rich-snippets-preview"></code>
     <script type="text/javascript">
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'https://api-cache.reviews.co.uk/json-ld/merchant/richsnippet?store=my-company');
+        xhr.open('GET', 'https://api.reviews.dev/json-ld/company/snippet?store=my-company');
         xhr.send(null);
 
         var container_element = document.getElementById('rich-snippets');
+        var preview_element = document.getElementById('rich-snippets-preview');
 
         xhr.onreadystatechange = function () {
             const complete = 4; // readyState 4 means the request is done.
@@ -31,6 +21,7 @@
             if (xhr.readyState === complete) {
                 if (xhr.status === success) {
                     container_element.innerHTML = xhr.responseText;
+                    preview_element.innerHTML = xhr.responseText;
                     console.log(xhr.responseText); // 'This is the returned text.'
                 }
             } else {
