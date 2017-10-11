@@ -12,38 +12,59 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 </head>
 <body>
-    <div class="container">
-        <h1>Hello, strcutured data!</h1>
-        <div class="row">
-            <div class="col-md-6">
-                <script type="application/ld+json" id="rich-snippets"></script>
-                <code id="rich-snippets-preview"></code>
-                <script type="text/javascript">
+    <div class="container-fluid">
+        <h1>Hello, structured data!</h1>
+        <br>
+        <div class="row-fluid">
+            <div class="col-md-12">
+                <pre id="rich-snippets-preview">
                     var xhr = new XMLHttpRequest();
                     xhr.open('GET', 'https://api.reviews.dev/json-ld/company/snippet?store=my-company');
                     xhr.send(null);
-
                     var container_element = document.getElementById('rich-snippets');
-                    var preview_element = document.getElementById('rich-snippets-preview');
-
                     xhr.onreadystatechange = function () {
-                        const complete = 4; // readyState 4 means the request is done.
-                        const success = 200; // status 200 is a successful return.
+                        var complete = 4; // readyState 4 means the request is done.
+                        var success = 200; // status 200 is a successful return.
                         if (xhr.readyState === complete) {
                             if (xhr.status === success) {
                                 container_element.innerHTML = xhr.responseText;
-                                preview_element.innerHTML = xhr.responseText;
                             }
                         } else {
-                            console.log('Error: ' + xhr.status); // An error occurred during the request.
+                            console.log('Error: ' + xhr.status);
+                            // An error occurred during the request.
                         }
                     }
-                </script>
+                </pre>
             </div>
-        </div>
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-    </div>
+        </div><!-- ./row -->
+        <div class="row-fluid">
+            <div class="col-md-12">
+                <script type="application/ld+json" id="rich-snippets" style="display: block;"></script>
+            </div>
+        </div><!-- ./row -->
+    </div><!-- ./container -->
+    <script type="text/javascript">
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'https://api.reviews.dev/json-ld/company/snippet?store=my-company');
+        xhr.send(null);
+
+        var container_element = document.getElementById('rich-snippets');
+
+        xhr.onreadystatechange = function () {
+            const complete = 4; // readyState 4 means the request is done.
+            const success = 200; // status 200 is a successful return.
+            if (xhr.readyState === complete) {
+                if (xhr.status === success) {
+                    container_element.innerHTML = xhr.responseText;
+                }
+            } else {
+                console.log('Error: ' + xhr.status); // An error occurred during the request.
+            }
+        }
+    </script>
+    <!-- jQuery first. -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- then Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 </body>
 <html>
