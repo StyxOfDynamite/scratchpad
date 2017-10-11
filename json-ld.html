@@ -1,33 +1,49 @@
 <!DOCTYPE html>
-<html>
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Carosuel and Rich Snippets</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 </head>
 <body>
-    <script type="application/ld+json" id="rich-snippets">
-    </script>
-    <code id="rich-snippets-preview"></code>
-    <script type="text/javascript">
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'https://api.reviews.dev/json-ld/company/snippet?store=my-company');
-        xhr.send(null);
+    <div class="container">
+        <h1>Hello, strcutured data!</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <script type="application/ld+json" id="rich-snippets"></script>
+                <code id="rich-snippets-preview"></code>
+                <script type="text/javascript">
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('GET', 'https://api.reviews.dev/json-ld/company/snippet?store=my-company');
+                    xhr.send(null);
 
-        var container_element = document.getElementById('rich-snippets');
-        var preview_element = document.getElementById('rich-snippets-preview');
+                    var container_element = document.getElementById('rich-snippets');
+                    var preview_element = document.getElementById('rich-snippets-preview');
 
-        xhr.onreadystatechange = function () {
-            const complete = 4; // readyState 4 means the request is done.
-            const success = 200; // status 200 is a successful return.
-            if (xhr.readyState === complete) {
-                if (xhr.status === success) {
-                    container_element.innerHTML = xhr.responseText;
-                    preview_element.innerHTML = xhr.responseText;
-                    console.log(xhr.responseText); // 'This is the returned text.'
-                }
-            } else {
-                console.log('Error: ' + xhr.status); // An error occurred during the request.
-            }
-      }
-  </script>
+                    xhr.onreadystatechange = function () {
+                        const complete = 4; // readyState 4 means the request is done.
+                        const success = 200; // status 200 is a successful return.
+                        if (xhr.readyState === complete) {
+                            if (xhr.status === success) {
+                                container_element.innerHTML = xhr.responseText;
+                                preview_element.innerHTML = xhr.responseText;
+                            }
+                        } else {
+                            console.log('Error: ' + xhr.status); // An error occurred during the request.
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    </div>
 </body>
-</html>
+<html>
