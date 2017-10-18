@@ -257,14 +257,11 @@
                 $('#snippetWidget').html(r);
             });
         };
-            if (document.readyState !== 'loading') {
-                fn();
-            } else {
-                window.addEventListener("load", function(event) {
-                    fn();
-                });
-            }
-        })();
+
+        window.addEventListener("load", function(event) {
+            fn();
+        });
+    })();
     </script>
 </body>
 </html>
