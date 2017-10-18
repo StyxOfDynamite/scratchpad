@@ -38,7 +38,7 @@
     <!-- then Bootstrap JS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
         <script type="text/javascript">
-        $.get('api.reviews.co.uk/json-ld/company/snippet?store=my-company', function(r){
+        $.get('https://api.reviews.co.uk/json-ld/company/snippet?store=my-company', function(r){
             $('#rich-snippets').html(r);
         });
     </script>
