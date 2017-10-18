@@ -7,9 +7,23 @@
     <meta name="author" content="">
     <title>UglyDucking Shop</title>
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="css/shop-homepage.css" rel="stylesheet">
+    <script type="text/javascript">
+    /* First CSS File */
+    const giftofspeed = document.createElement('link');
+    giftofspeed.rel = 'stylesheet';
+    giftofspeed.href = '../vendor/bootstrap/css/bootstrap.min.css';
+    giftofspeed.type = 'text/css';
+    var godefer = document.getElementsByTagName('link')[0];
+    godefer.parentNode.insertBefore(giftofspeed, godefer);
+
+    /* Second CSS File */
+    const giftofspeed2 = document.createElement('link');
+    giftofspeed2.rel = 'stylesheet';
+    giftofspeed2.href = 'css/shop-homepage.css';
+    giftofspeed2.type = 'text/css';
+    const godefer2 = document.getElementsByTagName('link')[0];
+    godefer2.parentNode.insertBefore(giftofspeed2, godefer2);
+    </script>
 
 </head>
 <body>
