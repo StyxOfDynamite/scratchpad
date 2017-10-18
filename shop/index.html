@@ -9,6 +9,7 @@
     <noscript id="deferred-styles">
       <link rel="stylesheet" type="text/css" href="css/b.min.css"/>
       <link rel="stylesheet" type="text/css" href="css/s.min.css" />
+      <link rel="stylesheet" type="text/css" href="https://dash.reviews.io/widget/float.css" />
     </noscript>
     <script>
         const loadDeferredStyles = function() {
@@ -213,60 +214,57 @@
         </div>
         <!-- /.container -->
     </footer>
+
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/popper/popper.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="https://widget.reviews.co.uk/carousel-inline/dist.js"></script>
-<!-- reviews rich snippets js -->
-<script>
-$.get('https://widget.reviews.co.uk/rich-snippet-reviews/widget?store=pen-and-paper&primaryClr=%23f47e27&textClr=%23565656&bgClr=%23f9f9f9&height=600&headClr=%23ffffff&header=&headingSize=20px&numReviews=21&names=1&dates=1&footer=1', function(r){
-$('#snippetWidget').html(r);
-});
-</script>
-<!-- carousel widget
-<script>
-carouselInlineWidget('carousel-inline-widget-810',{
-store: 'pen-and-paper',
-primaryClr: '#f47e27',
-neutralClr: '#f4f4f4',
-reviewTextClr:'#2f2f2f',
-ratingTextClr:'#2f2f2f',
-layout:'fullWidth',
-numReviews: 21
-});
-</script>
--->
-<!-- product rich snippet
-<script src="https://widget.reviews.co.uk/product/dist.js"></script>
-<script src="https://widget.reviews.co.uk/rating-snippet/dist.js"></script>
-<script>
-store: "pen-and-paper",
-color: "#f47e27",
-linebreak: true,
-text: "Reviews"
-});
-</script>
--->
-<!-- badge widget
-<script src="https://widget.reviews.co.uk/badge/dist.js"></script>
-<script>
-reviewsBadge('badge-140',{
-store: 'pen-and-paper',
-primaryClr: '#12d06c',
-neutralClr: '#f4f4f4',
-starsClr: '#fff',
-textClr: '#fff'
-});
-</script>
--->
-<!-- float widget -->
-<script type="text/javascript"
-    src="https://dash.reviews.io/widget/float.js"
-    data-store="pen-and-paper"
-    data-color="#12CF6C"
-    data-position="right">
-</script>
-<link href="https://dash.reviews.io/widget/float.css" rel="stylesheet" />
+    <!-- <script src="js/lib/require.js" data-main="js/app/main"></script> -->
+    <script type="text/javascript" src="js/vendor/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="js/vendor/popper/popper.min.js"></script>
+    <script type="text/javascript" src="js/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script async defer src="https://widget.reviews.co.uk/carousel-inline/dist.js"></script>
+    <script async defer src="https://widget.reviews.co.uk/product/dist.js"></script>
+    <script async defer src="https://widget.reviews.co.uk/rating-snippet/dist.js"></script>
+    <script async defer src="https://widget.reviews.co.uk/badge/dist.js"></script>
+    <script async defer type="text/javascript" src="https://dash.reviews.io/widget/float.js" data-store="pen-and-paper" data-color="#12CF6C" data-position="right"></script>
+    <!-- reviews rich snippets js -->
+    <script>
+        (() => { function fn() {
+            // "On document ready" commands:
+            console.log(document.readyState);
+
+            // reviews badge.
+            reviewsBadge('badge-140',{
+                store: 'pen-and-paper',
+                primaryClr: '#12d06c',
+                neutralClr: '#f4f4f4',
+                starsClr: '#fff',
+                textClr: '#fff'
+            });
+
+            //carousel inline.
+            carouselInlineWidget('carousel-inline-widget-810', {
+                store: 'pen-and-paper',
+                primaryClr: '#f47e27',
+                neutralClr: '#f4f4f4',
+                reviewTextClr:'#2f2f2f',
+                ratingTextClr:'#2f2f2f',
+                layout:'fullWidth',
+                numReviews: 21
+            });
+
+            // rich snippet.
+            const request_url = 'https://widget.reviews.co.uk/rich-snippet-reviews/widget?store=pen-and-paper&primaryClr=%23f47e27&textClr=%23565656&bgClr=%23f9f9f9&height=600&headClr=%23ffffff&header=&headingSize=20px&numReviews=21&names=1&dates=1&footer=1'
+            $.get(request_url, function(r) {
+                $('#snippetWidget').html(r);
+            });
+        };
+            if (document.readyState !== 'loading') {
+                fn();
+            } else {
+                window.addEventListener("load", function(event) {
+                    fn();
+                });
+            }
+        })();
+    </script>
 </body>
 </html>
