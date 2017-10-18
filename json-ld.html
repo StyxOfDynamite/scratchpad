@@ -38,8 +38,8 @@
     <!-- then Bootstrap JS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
         <script type="text/javascript">
-        $.get('https://widget.reviews.io/rich-snippet-reviews/widget?store=stackedskincare-com&primaryClr=%23f47e27&textClr=%23565656&bgClr=%23f9f9f9&height=600&headClr=%23ffffff&header=&headingSize=20px&numReviews=21&names=1&dates=1&footer=1', function(r){
-            $('#snippetWidget').html(r);
+        $.get('api.reviews.co.uk/json-ld/company/snippet?store=my-company', function(r){
+            $('#rich-snippets').html(r);
         });
     </script>
 </body>
