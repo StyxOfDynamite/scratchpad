@@ -1,0 +1,199 @@
+.ReviewsMinimalWidget {
+    font-family: "Arial", sans-serif;
+    display: inline-block;
+    cursor: pointer
+}
+
+.ReviewsMinimalWidget .ReviewsLogo {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px
+}
+
+.ReviewsMinimalWidget .ReviewsLogo .ReviewsLogo__star {
+    float: left;
+    display: inline-block;
+    margin-right: 5px
+}
+
+.ReviewsMinimalWidget .ReviewsLogo .ReviewsLogo__star i {
+    color: #12cf6c;
+    font-size: 21px
+}
+
+.ReviewsMinimalWidget .ReviewsLogo .ReviewsLogo__text {
+    float: left;
+    display: inline-block
+}
+
+.ReviewsMinimalWidget .ReviewsLogo .ReviewsLogo__text i {
+    color: #000;
+    font-size: 16px;
+    line-height: 24px
+}
+
+.ReviewsMinimalWidget .ReviewsLogo--small .ReviewsLogo__star i {
+    font-size: 16px;
+    line-height: 21px
+}
+
+.ReviewsMinimalWidget .ReviewsLogo--small .ReviewsLogo__text i {
+    font-size: 12px;
+    line-height: 21px
+}
+
+.ReviewsMinimalWidget .ReviewsLogo--medium .ReviewsLogo__star i {
+    font-size: 21px;
+    line-height: 23px
+}
+
+.ReviewsMinimalWidget .ReviewsLogo--medium .ReviewsLogo__text i {
+    font-size: 16px;
+    line-height: 24px
+}
+
+.ReviewsMinimalWidget .ReviewsLogo--large .ReviewsLogo__star {
+    margin-right: 8px
+}
+
+.ReviewsMinimalWidget .ReviewsLogo--large .ReviewsLogo__star i {
+    font-size: 32px;
+    line-height: 32px
+}
+
+.ReviewsMinimalWidget .ReviewsLogo--large .ReviewsLogo__text i {
+    font-size: 25px;
+    line-height: 32px
+}
+
+.ReviewsMinimalWidget .RatingStars {
+    vertical-align: top;
+    margin-right: 10px;
+    display: inline-block
+}
+
+.ReviewsMinimalWidget .RatingStars i.RatingStars__star {
+    display: inline-block;
+    float: left;
+    color: #f47e27
+}
+
+.ReviewsMinimalWidget .RatingStars--small i.RatingStars__star {
+    font-size: 17px;
+    margin: 0 1px
+}
+
+.ReviewsMinimalWidget .RatingStars--small i.RatingStars__star.ruk-icon-percentage-star-25-01,
+.ReviewsMinimalWidget .RatingStars--small i.RatingStars__star.ruk-icon-percentage-star-50-01,
+.ReviewsMinimalWidget .RatingStars--small i.RatingStars__star.ruk-icon-percentage-star-75-01 {
+    font-size: 14px
+}
+
+.ReviewsMinimalWidget .RatingStars--medium i.RatingStars__star {
+    font-size: 24px;
+    margin: 0 1px
+}
+
+.ReviewsMinimalWidget .RatingStars--medium i.RatingStars__star.ruk-icon-percentage-star-25-01,
+.ReviewsMinimalWidget .RatingStars--medium i.RatingStars__star.ruk-icon-percentage-star-50-01,
+.ReviewsMinimalWidget .RatingStars--medium i.RatingStars__star.ruk-icon-percentage-star-75-01 {
+    font-size: 18px;
+    line-height: 21px
+}
+
+.ReviewsMinimalWidget .RatingStars--large i.RatingStars__star {
+    font-size: 32px;
+    margin: 0 1px
+}
+
+.ReviewsMinimalWidget .RatingStars--large i.RatingStars__star.ruk-icon-percentage-star-25-01,
+.ReviewsMinimalWidget .RatingStars--large i.RatingStars__star.ruk-icon-percentage-star-50-01,
+.ReviewsMinimalWidget .RatingStars--large i.RatingStars__star.ruk-icon-percentage-star-75-01 {
+    font-size: 24px;
+    line-height: 29px
+}
+
+.ReviewsMinimalWidget .RatingStatistics {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 18px;
+    vertical-align: top;
+    margin-top: 3px
+}
+
+.ReviewsMinimalWidget .RatingStatistics .RatingStatistics__Number {
+    display: inline-block;
+    color: #000000;
+    font-weight: bold
+}
+
+.ReviewsMinimalWidget .RatingStatistics .RatingStatistics__Text {
+    display: inline-block;
+    color: #a3a3a3;
+    font-weight: lighter;
+    margin-right: 5px
+}
+
+.ReviewsMinimalWidget-popup {
+    display: none;
+    z-index: 999;
+}
+
+.ReviewsMinimalWidget-popup.isActive {
+    display: block
+}
+
+.ReviewsMinimalWidget-popup .popup__backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.ReviewsMinimalWidget-popup .popup__dialog {
+    position: relative;
+    max-width: 700px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    background-color: #ffffff
+}
+
+.ReviewsMinimalWidget-popup .popup__dialog iframe {
+    width: 100%;
+    height: 90%
+}
+
+.ReviewsMinimalWidget-popup .popup__dialog .dialog__closebtn {
+    background-color: #ffffff;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    border-radius: 120px;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    color: #525050;
+    cursor: pointer
+}
+
+.ReviewsMinimalWidget-popup .popup__dialog .dialog__closebtn i {
+    line-height: 35px;
+    font-size: 20px
+}
+
+.cfx:after,
+.ReviewsMinimalWidget .ReviewsLogo:after,
+.ReviewsMinimalWidget .RatingStars:after {
+    content: "";
+    display: table;
+    clear: both
+}
