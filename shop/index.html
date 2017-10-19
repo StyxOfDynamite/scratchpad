@@ -198,6 +198,9 @@
                     <div id="carousel-inline-widget-810" style="width:100%;max-width:810px;margin:0 auto;"></div>
                 </div>
                 <!-- /.row -->
+                <div class="row">
+                    <div id="product-widget" style="width:100%;"></div>
+                </div>
             </div>
             <!-- /.col-lg-9 -->
         </div>
@@ -214,7 +217,6 @@
         </div>
         <!-- /.container -->
     </footer>
-
     <!-- Bootstrap core JavaScript -->
     <script type="text/javascript" src="js/vendor/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="js/vendor/popper/popper.min.js"></script>
@@ -225,6 +227,7 @@
     <script async type="text/javascript" src="https://widget.reviews.co.uk/rating-snippet/dist.js"></script>
     <script async type="text/javascript" src="https://widget.reviews.co.uk/badge/dist.js"></script>
     <script async type="text/javascript" src="https://dash.reviews.io/widget/float.js" data-store="pen-and-paper" data-color="#12CF6C" data-position="right"></script>
+    <script async type="text/javascript" src="https://widget.reviews.co.uk/product/dist.js"></script>
 
     <script>
         (() => { function fn() {
@@ -240,7 +243,7 @@
                 textClr: '#fff'
             });
 
-            //carousel inline.
+            // carousel inline.
             carouselInlineWidget('carousel-inline-widget-810', {
                 store: 'pen-and-paper',
                 primaryClr: '#f47e27',
@@ -249,6 +252,20 @@
                 ratingTextClr:'#2f2f2f',
                 layout:'fullWidth',
                 numReviews: 21
+            });
+
+            // product widget
+            productWidget("product-widget",{
+                store: "pen-and-paper",
+                sku: "PR-68;PR-69;PR-3", // Multiple SKU"s Seperated by Semi-Colons
+                primaryClr: "#f47e27",
+                neutralClr: "#EBEBEB",
+                buttonClr: "#EEE",
+                textClr: "#333",
+                tabClr: "#eee",
+                ratingStars: false,
+                showAvatars: true,
+                perPage: 10
             });
 
             // rich snippet.
