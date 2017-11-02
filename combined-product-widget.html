@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Swak Designs - Custom Widget</title>
+	<style type="text/css">
+		.container {
+			padding: 0;
+			margin: 0;
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: space-around;
+		}
+
+		.item {
+			padding: 1em;
+			width: 80%;
+			height: 20%;
+			margin-top: 0.75em;
+			text-align: center;
+		}
+
+		textarea {
+			width: 70%;
+			height: 280px;
+			resize: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="item">
+			<p>The widget code should be outputting a single, abbreviated SKU.</p>
+			<p>ParkerLongCardigan-6X-Nav &#10511; ParkerLongCardigan</p>
+			<p>OpenCardigan-4X-White &#10511; OpenCardigan</p>
+			<textarea readonly="true">
+				
+				<div id="widget">
+					<!-- Widget gets injected into this container -->
+				</div>
+				<script type="text/javascript">
+					productWidget("widget",{
+						store: "swak-designs",
+						sku: "OpenCardigan", // Just the first part of the Item / Colour Variant SKU.
+						primaryClr: "#f47e27",
+						neutralClr: "#EBEBEB",
+						buttonClr: "#EEE",
+						textClr: "#333",
+						tabClr: "#eee",
+						ratingStars: false,
+						showAvatars: true,
+						perPage: 10
+					});
+				</script>
+			</textarea>
+		</div>
+		<div class="item">
+			<div id="widget"></div>
+		</div>
+	</div>
+	<script src="https://widget.reviews.io/product/dist.js"></script>
+	<script type="text/javascript">
+		productWidget("widget",{
+			store: "swak-designs",
+			sku: "OpenCardigan", // Multiple SKU"s Seperated by Semi-Colons
+			primaryClr: "#f47e27",
+			neutralClr: "#EBEBEB",
+			buttonClr: "#EEE",
+			textClr: "#333",
+			tabClr: "#eee",
+			ratingStars: false,
+			showAvatars: true,
+			perPage: 10
+		});
+	</script>
+</body>
+</html>
