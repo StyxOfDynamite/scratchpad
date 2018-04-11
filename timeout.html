@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+	<script>
+		function poll() {
+			$.get('http://your-api-endpoint.com')
+			.done(function() {
+				alert('done');
+			})
+			.fail(function() {
+				alert('error');
+
+			})
+			.always(function () {
+				setTimeout(function() {
+					poll();
+				}, 15000);
+			});
+		}
+		poll();
+	</script>
+
+</body>
+</html>
