@@ -11,36 +11,50 @@
 </head>
 <body>
     <div class="container-fluid">
-        <h1>Hello, structured data!</h1>
-        <br>
-        <div class="row-fluid">
-            <div class="col-md-12">
-                <pre id="rich-snippets-preview">
-                    $.get('https://widget.reviews.io/rich-snippet-reviews/widget?store=stackedskincare-com&primaryClr=%23f47e27&textClr=%23565656&bgClr=%23f9f9f9&height=600&headClr=%23ffffff&header=&headingSize=20px&numReviews=21&names=1&dates=1&footer=1', function(r){
-                        $('#snippetWidget').html(r);
-                    });
-                </pre>
-            </div>
-        </div><!-- ./row -->
-        <div class="row-fluid">
-            <div class="col-md-12">
-                <script type="application/ld+json" id="rich-snippets"></script>
-            </div>
-        </div><!-- ./row -->
-    </div><!-- ./container -->
-    <!-- jQuery first. -->
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.min.js"
-      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-      crossorigin="anonymous"></script>
-    <!-- then Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-    <!-- then Bootstrap JS -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-        <script type="text/javascript">
-        $.get('https://api.reviews.co.uk/json-ld/company/snippet?store=my-company', function(r){
-            $('#rich-snippets').html(r);
-        });
-    </script>
+        <h1>Json LD deferred.</h1>
+        <script src="https://widget.reviews.io/rich-snippet/dist.js" defer=""></script>
+        <script src="https://widget.reviews.io/product/dist.js" defer=""></script>
+        <script>
+            window.addEventListener('load', (event) => {
+                richSnippet({
+                    store: 'mk3',
+                    sku: 'MK5196',
+                    data:{
+                        description: "Toyota Rav4 2019 Original Smart Remote Key 3 Buttons 433MHz 8990H-42190 Used - mk3.com",
+                        gtin14: '880771677089',
+                        offers:[{
+                            '@type':'offer',
+                            url: 'https://www.mk3.com/toyota-rav4-2019-original-smart-remote-key-3-buttons-433mhz-8990h-42190-used',
+                            price:'81.25',
+                            priceValidUntil: '2019-10-11',
+                            priceCurrency: 'USD',
+
+                            availability: "http://schema.org/InStock"
+                        }],
+                        brand: {
+                            '@type': 'Brand',
+                            name: ''
+                        }
+                    }
+
+                });
+            });
+
+            window.addEventListener('load', (event) => {
+                productWidget("widget", {
+                    store: "mk3",
+                    sku: "MK5196", // Multiple SKU"s Seperated by Semi-Colons
+                    primaryClr: "#f47e27",
+                    neutralClr: "#EBEBEB",
+                    buttonClr: "#EEE",
+                    textClr: "#333",
+                    tabClr: "#eee",
+                    ratingStars: false,
+                    showAvatars: true,
+                    perPage: 10
+                });
+            });
+        </script>
+    </div>
 </body>
 <html>
