@@ -156,19 +156,7 @@
                 <div id="ReviewsWidget">
                     <script src="https://widget.reviews.co.uk/rich-snippet-reviews-widgets/dist.js" type="text/javascript"></script>
                     <div id="carousel-widget"></div>
-                    <script>
-                            richSnippetReviewsWidgets("carousel-widget", {
-                                store: "makemelocal-com",
-                                primaryClr: "#f47e27",
-                                neutralClr: "#cccccc",
-                                reviewTextClr: "#333333",
-                                widgetName: "carousel",
-                                layout: "fullWidth",
-                                numReviews: 40,
-                                contentMode: "company",
-                                hideDates: false
-                            });
-                    </script>
+                    
                 </div>
             </div>
             <!-- /.col-lg-9 -->
@@ -194,48 +182,60 @@
 
     <script>
     function pageLoad() {
+        
+            richSnippetReviewsWidgets("carousel-widget", {
+                store: "makemelocal-com",
+                primaryClr: "#f47e27",
+                neutralClr: "#cccccc",
+                reviewTextClr: "#333333",
+                widgetName: "carousel",
+                layout: "fullWidth",
+                numReviews: 40,
+                contentMode: "company",
+                hideDates: false
+            });
 
-        // Rating Snippet
-        ratingSnippet("ruk_rating_snippet", {
-            store: "my-company",
-            color: "#f47e27",
-            linebreak: true,
-            text: "Reviews"
-        });
-        // Combined Widget
-        new ReviewsWidget("#ReviewsWidget", {
-            store: "my-company",
-            widget: "combined-widget",
-            options: {
-                types: "store_review,product_review,questions",
-                per_page: 5,
-                product_review: {
-                    sku: "1234",
-                    structured_data: {
-                        category: "Clothing > Hoodies",
-                        gtin8: "70123565",
-                        url: "https://styxofdynamite.github.io/scratchpad/shop",
-                        image: 'https://styxofdynamite.github.io/scratchpad/shop/img/hoodie.jpg',
-                        description: "A comfy fleece lined hoodie",
-                        offers: [{
-                            type: 'Offer',
-                            price: "24.99",
-                            priceCurrency: "USD",
-                            url: "https://styxofdynamite.github.io/scratchpad/shop/hoody",
-                            availability: "http://schema.org/InStock",
-                            priceValidUntil: "2019-12-31",
-                        }],
-                        brand: {
-                            type: "Brand",
-                            name: "Awesome Sauce",
-                        },
-                    }
-                },
-                questions: {
-                    grouping: "1234"
-                }
-            },
-        });
+        // // Rating Snippet
+        // ratingSnippet("ruk_rating_snippet", {
+        //     store: "my-company",
+        //     color: "#f47e27",
+        //     linebreak: true,
+        //     text: "Reviews"
+        // });
+        // // Combined Widget
+        // new ReviewsWidget("#ReviewsWidget", {
+        //     store: "my-company",
+        //     widget: "combined-widget",
+        //     options: {
+        //         types: "store_review,product_review,questions",
+        //         per_page: 5,
+        //         product_review: {
+        //             sku: "1234",
+        //             structured_data: {
+        //                 category: "Clothing > Hoodies",
+        //                 gtin8: "70123565",
+        //                 url: "https://styxofdynamite.github.io/scratchpad/shop",
+        //                 image: 'https://styxofdynamite.github.io/scratchpad/shop/img/hoodie.jpg',
+        //                 description: "A comfy fleece lined hoodie",
+        //                 offers: [{
+        //                     type: 'Offer',
+        //                     price: "24.99",
+        //                     priceCurrency: "USD",
+        //                     url: "https://styxofdynamite.github.io/scratchpad/shop/hoody",
+        //                     availability: "http://schema.org/InStock",
+        //                     priceValidUntil: "2019-12-31",
+        //                 }],
+        //                 brand: {
+        //                     type: "Brand",
+        //                     name: "Awesome Sauce",
+        //                 },
+        //             }
+        //         },
+        //         questions: {
+        //             grouping: "1234"
+        //         }
+        //     },
+        // });
     };
 
     window.addEventListener("load", function (event) {
