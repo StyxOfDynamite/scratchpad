@@ -1,44 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Carosuel and Rich Snippets</title>
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<title></title>
 </head>
 <body>
-    <div class="container-fluid">
-        <h1>Json LD deferred.</h1>
-        <script src="https://widget.reviews.io/rich-snippet/dist.js" defer=""></script>
-        <script>
-        window.addEventListener('load', function() {
-                richSnippet({
-                    store: 'mk3',
-                    sku: 'MK5196',
-                    data:{
-                        description: "Toyota Rav4 2019 Original Smart Remote Key 3 Buttons 433MHz 8990H-42190 Used - mk3.com",
-                        gtin14: '880771677089',
-                        offers:[{
-                            '@type':'offer',
-                            url: 'https://www.mk3.com/toyota-rav4-2019-original-smart-remote-key-3-buttons-433mhz-8990h-42190-used',
-                            price:'81.25',
-                            priceValidUntil: '2019-10-11',
-                            priceCurrency: 'USD',
-
-                            availability: "http://schema.org/InStock"
-                        }],
-                        brand: {
-                            '@type': 'Brand',
-                            name: ''
-                        }
-                    }
-
-                });
-        });
-        </script>
-    </div>
+	<h1>Rich Schema Enabled Page</h1>
+<script src="https://widget.reviews.co.uk/rich-snippet/dist.js"></script>
+<script>
+richSnippet({
+    store: 'dip-slides-com',
+    sku: '148',
+    data: {
+        offers: [{
+            '@type': 'offer',
+            price: '123',
+            priceCurrency: 'GBP',
+            availability: 'http://schema.org/InStock'
+        }]
+    }
+});
+</script>
 </body>
-<html>
+</html>
