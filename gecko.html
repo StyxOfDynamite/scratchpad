@@ -1,0 +1,64 @@
+<html>
+<head>
+    <title>Gecko</title>
+</head>
+<body>
+    <div id="ReviewsWidget"></div>
+    <link rel="stylesheet" href="https://d1azc1qln24ryf.cloudfront.net/40686/revsglobal-pr-mod/style-cf.css?-c0avz5">
+    <script src="https://widget.reviews.co.uk/combined/dist.js?v1"></script>
+    <link rel="stylesheet" href="https://widget.reviews.co.uk/combined/style.css?v1">
+    <script>
+    new ReviewsWidget('#ReviewsWidget', {
+        store: 'gecko-mobile-',
+        widget: 'combined-widget',
+        options: {
+            types: 'store_review',
+            per_page: 20,
+            store_review: {
+                enable_social_sharing: true,
+                enable_helpful: true,
+                enable_smart_filters: true,
+                enable_rating_filters: true,
+                enable_featured_review_photos: true,
+                enable_featured_social_photos: true,
+                enable_toggle_filters: true,
+                enable_list_summary: true,
+                show_mention_text: true,
+                show_dates: true,
+                show_replies: true,
+                show_avatars: true,
+                show_photos: true,
+                show_verify_status: true,
+                //tag: 'shop',
+            },
+        },
+        styles: {
+            starColor: '#f47e27',
+            textColor: '#333333',
+            primaryColor: '#333333',
+            textColor: '#666666',
+            neutralColor: '#ececec',
+            backgroundColor: '#ffffff',
+            formColor: '#dcdcdc',
+            baseTextSize: '14px',
+            header_style: ''
+        },
+        buttons: {
+            smart_filter: 'solid',
+            write_review: 'solid',
+            selected_page: 'outline'
+        },
+        avatars: {
+            enable_gravatar: true,
+            gravatar_fallback: 'identicon'
+        },
+        reviewsLogo: {
+            show_logo: true,
+            style: 'black'
+        }
+
+    });
+
+    </script>
+</body>
+</html>
